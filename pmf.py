@@ -12,7 +12,7 @@ class PMF(object):
                  m,
                  k=10,
                  learning_rate=0.015,
-                 epoch=50,
+                 epoch=25,
                  hyper_paramter=0.1):
         self._train = train_data
         self._test = test_data
@@ -24,7 +24,7 @@ class PMF(object):
         self.lamda = hyper_paramter
 
     def train(self):
-        U = np.random.normal(0, 0.05, (self.user_num, self.factor_num))  # 初始化用户隐含特征矩阵U
+        U = np.random.normal(0, 0.1, (self.user_num, self.factor_num))  # 初始化用户隐含特征矩阵U
         V = np.random.normal(0, 0.1, (self.item_num, self.factor_num))  # 初始化电影隐含特征矩阵V
         record_list = list()  # 用来存下训练过程中的损失值及RMSE
 
